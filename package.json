@@ -18,7 +18,7 @@
   "scripts": {
     "start": "react-scripts start",
     "compile:sass": "node-sass src/sass/main.scss src/style.css",
-    "watch:sass": "node-sass src/sass/main.scss src/style.css -w",
+    "watch:sass": "node-sass src/sass/main.scss src/style.css -w -r",
     "startw": "concurrently \"npm run start\" \"npm run watch:sass\""
   }
 }

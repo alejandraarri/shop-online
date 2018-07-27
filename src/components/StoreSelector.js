@@ -1,11 +1,11 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 
 class StoreSelector extends React.Component {
   render() {
     return (
-      <Fragment>
-        <h2>Shop online. Anywhere. Anytime.</h2>
-        <form className="store-selector">
+      <div className="storeSelector">
+        <h1>Shop online. Anywhere. Anytime.</h1>
+        <form>
           <label>Which store do you prefer?</label>
           <select required>
             <option value=""></option>
@@ -15,7 +15,7 @@ class StoreSelector extends React.Component {
           </select>
           <button type="Submit">Continue</button>
         </form>
-      </Fragment>
+      </div>
     )
   }
 }
