@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
-import StoreSelector from './components/StoreSelector';
+import Router from './components/Router';
 import "./style.css";
 
-render(<StoreSelector />, document.querySelector('#main'));
+render(<Router />, document.querySelector('#main'));
