@@ -3,7 +3,9 @@ import React from "react";
 class ShoppingCart extends React.Component {
   render(){
     return (
-      <p>ShoppingCart</p>
+      <div className="shoppingCart">
+        <p>ShoppingCart</p>
+      </div>
     );
   }
 }

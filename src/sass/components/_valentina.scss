@@ -1,0 +1,85 @@
+.valentina {
+  display: flex;
+  flex-wrap: wrap;
+  font-family: "Raleway", Helvetica, Arial, sans-serif;
+  text-align: center;
+
+  &__heading {
+    font-family: "Libre Baskerville", Times, serif;
+    font-weight: normal;
+  }
+  &__tagline {
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: .2px;
+  }
+
+  .collection,
+  .shoppingCart {
+    width: 50%;
+    max-height: 90vh;
+    overflow: scroll;
+  }
+  .garment {
+    &__list {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    &__item {
+      width: 50%;
+      padding: 1em;
+
+      &--disabled {
+        filter: opacity(0.5);
+      }
+
+      img {
+        width: 100%;
+      }
+
+      &:not(.garment__item--disabled):hover .garment__cta {
+        display: block;
+      }
+
+    }
+
+    &__imgWrapper {
+      position: relative;
+    }
+
+    &__cta {
+      display: none;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      padding: .5em;
+      background-color: #bfa678;
+      border-color: #bfa678;
+      color: #f3f0eb;
+      font-size: .9em;
+      -webkit-appearance: none;
+
+      &:hover {
+        background-color: #d1bf9e;
+        border-color: #d1bf9e;
+        color: #ffffff;
+      }
+    }
+
+    &__heading {
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size: .8em;
+      letter-spacing: .2px;
+    }
+
+    &__price {
+
+    }
+
+  }
+
+}
