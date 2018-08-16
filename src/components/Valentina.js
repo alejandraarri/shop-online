@@ -27,7 +27,7 @@ class Valentina extends React.Component {
     return (
       <div className="valentina">
           <Collection collection={this.state.collection} addToCart={this.addToCart}/>
-          <ShoppingCart />
+          <ShoppingCart collection={this.state.collection} cart={this.state.cart}/>
           <Inventory addItem={this.addItem}/>
       </div>
     );

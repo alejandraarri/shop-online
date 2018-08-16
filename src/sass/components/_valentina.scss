@@ -79,6 +79,65 @@
     &__price {
 
     }
+  }
+
+  .shoppingCart {
+    width: 45%;
+    margin-left: 5%;
+    padding: 1.5em 2em;
+    border-left: 1px solid #eee;
+
+    &__item {
+      display: flex;
+      flex-wrap: wrap;
+      padding: .8em 0;
+      border-bottom: 1px solid #eee;
+
+      &ImgWrapper {
+        max-width: 20%;
+        img {
+          width: 100%;
+        }
+      }
+      &Details {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex-grow: 1;
+        position: relative;
+        padding-left: 1em;
+        text-align: left;
+      }
+      &Name {
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: .8em;
+        letter-spacing: .2px;
+      }
+      &Price {
+        float: right;
+      }
+    }
+
+    &__heading {
+      font-size: 1em;
+      text-transform: uppercase;
+      letter-spacing: .2px;
+    }
+
+    &__emptyCartContainer {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100%;
+    }
+
+    &__total {
+      display: flex;
+      justify-content: space-between;
+      padding: .5em 0;
+      font-size: 1.2em;
+    }
 
   }
 
