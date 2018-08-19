@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 import ShoppingCartItem from './ShoppingCartItem';
-import { formatPrice } from "../utils"
+import { formatPrice } from "../utils";
+import styled from "styled-components";
 
 class ShoppingCart extends React.Component {
   renderCart(){
@@ -16,16 +17,16 @@ class ShoppingCart extends React.Component {
     }, 0);
     if (total === 0) {
       return (
-        <div className="shoppingCart__emptyCartContainer">
+        <EmptyCart>
           <p>Your Shopping Cart is empty.</p>
           <p>Let's start shopping!</p>
 
-        </div>
+        </EmptyCart>
       );
     }
     return (
       <Fragment>
-        <ul className="shoppingCart__list">
+        <ul>
           {Object.keys(this.props.cart).map(key => (
             <ShoppingCartItem
               key={key}
@@ -36,21 +37,50 @@ class ShoppingCart extends React.Component {
             />
           ))}
         </ul>
-        <div className="shoppingCart__total">
+        <Total>
           <span>Total: </span>
           <span>{formatPrice(total)}</span>
-        </div>
+        </Total>
       </Fragment>
     );
   }
   render(){
     return (
-      <div className="shoppingCart">
-          <h2 className="shoppingCart__heading">My Cart</h2>
-          {this.renderCart()}
-        </div>
+      <Wrapper>
+        <Heading>My Cart</Heading>
+        {this.renderCart()}
+      </Wrapper>
     );
   }
 }
+
+const Wrapper = styled.div`
+  width: 45%;
+  max-height: 90vh;
+  margin-left: 5%;
+  padding: 1.5em 2em;
+  border-left: 1px solid #eee;
+  overflow: scroll;
+`;
+
+const Heading = styled.h2`
+  font-size: 1em;
+  text-transform: uppercase;
+  letter-spacing: .2px;
+`;
+
+const EmptyCart = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+`;
+
+const Total = styled.div`
+  display: flex;
+  justify-content: space-between;
+  padding: .5em 0;
+  font-size: 1.2em;
+`;
 
 export default ShoppingCart;

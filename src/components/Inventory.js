@@ -6,22 +6,22 @@ class Inventory extends React.Component {
   render(){
     return (
       <Fragment>
-        <InventoryCheckbox type="checkbox" id="inventory-toggle" />
-        <InventoryWrapper>
-          <InventoryToogle htmlFor="inventory-toggle"></InventoryToogle>
-          <InventoryHeading>Inventory</InventoryHeading>
+        <Checkbox type="checkbox" id="inventory-toggle" />
+        <Wrapper>
+          <Toogle htmlFor="inventory-toggle"></Toogle>
+          <Heading>Inventory</Heading>
           <AddItemForm addItem={this.props.addItem}/>
-        </InventoryWrapper>
+        </Wrapper>
       </Fragment>
     );
   }
 }
 
-const InventoryCheckbox = styled.input`
+const Checkbox = styled.input`
   display: none;
 `;
 
-const InventoryWrapper = styled.div`
+const Wrapper = styled.div`
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -31,13 +31,13 @@ const InventoryWrapper = styled.div`
   text-align: center;
   transition: max-height 0.5s ease-out;
 
-  ${InventoryCheckbox}:checked + & {
+  ${Checkbox}:checked + & {
     max-height: 500px;
     transition: max-height 0.5s ease-out;
   }
 `;
 
-const InventoryToogle = styled.label`
+const Toogle = styled.label`
   position: absolute;
   top: 0;
   right: 0;
@@ -51,12 +51,12 @@ const InventoryToogle = styled.label`
     content: '\00bb';
   }
 
-  ${InventoryCheckbox}:checked + ${InventoryWrapper} & {
+  ${Checkbox}:checked + ${Wrapper} & {
     transform:rotate(90deg);
   }
 `;
 
-const InventoryHeading = styled.h2`
+const Heading = styled.h2`
   font-weight: 500;
 `;
 export default Inventory;

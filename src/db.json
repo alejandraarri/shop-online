@@ -1,0 +1,69 @@
+{
+   "valentina":[
+      {
+         "id":1,
+         "name":"Basic Short Sleeve T-Shirt",
+         "image":"/images/valentina01.jpg",
+         "price":4595,
+         "status":"available"
+      },
+      {
+         "id":2,
+         "name":"Peplum Top",
+         "image":"/images/valentina02.jpg",
+         "price":5995,
+         "status":"available"
+      },
+      {
+         "id":3,
+         "name":"Striped Cotton T-Shirt",
+         "image":"/images/valentina03.jpg",
+         "price":3995,
+         "status":"available"
+      },
+      {
+         "id":4,
+         "name":"Basic Short Sleeve T-Shirt",
+         "image":"/images/valentina04.jpg",
+         "price":4595,
+         "status":"available"
+      },
+      {
+         "id":5,
+         "name":"Basic Short Sleeve T-Shirt",
+         "image":"/images/valentina05.jpg",
+         "price":4595,
+         "status":"available"
+      },
+      {
+         "id":6,
+         "name":"Basic Short Sleeve T-Shirt",
+         "image":"/images/valentina06.jpg",
+         "price":4595,
+         "status":"available"
+      },
+      {
+         "id":7,
+         "name":"Striped Wool Slim Fit Blazer",
+         "image":"/images/valentina07.jpg",
+         "price":14900,
+         "status":"available"
+      },
+      {
+         "id":8,
+         "name":"Striped Blouse With Buttoned Front",
+         "image":"/images/valentina08.jpg",
+         "price":6995,
+         "status":"available"
+      }
+   ],
+   "shoppers":[
+      {
+         "id":1,
+         "name":"Striped Blouse With Buttoned Front",
+         "image":"/images/valentina08.jpg",
+         "price":6995,
+         "status":"available"
+      }
+   ]
+}

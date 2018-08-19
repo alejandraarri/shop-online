@@ -1,16 +1,15 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch} from 'react-router-dom';
 import StoreSelector from './StoreSelector';
-import Valentina from './Valentina';
-import Shoppers from './Shoppers';
+import Store from './Store';
 import NotFound from './NotFound';
 
 const Router = () => (
   <BrowserRouter>
     <Switch>
       <Route exact path="/" component={StoreSelector}/>
-      <Route path="/valentina" component={Valentina}/>
-      <Route path="/shoppers" component={Shoppers}/>
+      <Route path="/valentina" component={() => <Store name={"valentina"} />}/>
+      <Route path="/shoppers" component={() => <Store name={"Shoppers"} />}/>
       <Route component={NotFound}/>
     </Switch>
   </BrowserRouter>
