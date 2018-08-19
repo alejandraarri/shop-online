@@ -2,8 +2,8 @@ import React from "react";
 import Collection from './Collection';
 import ShoppingCart from './ShoppingCart';
 import Inventory from './Inventory';
-import garments from '../valentina-collection';
 import styled from "styled-components";
+import style from "../style";
 
 class Store extends React.Component {
   state = {
@@ -25,7 +25,7 @@ class Store extends React.Component {
   };
   componentWillMount(){
     var that = this;
-    fetch('http://localhost:3002/valentina')
+    fetch("http://localhost:3002/"+ that.props.name)
       .then(function(response) {
         return response.json();
       })
@@ -40,7 +40,7 @@ class Store extends React.Component {
       return (<div>Loading...</div>);
     }
     return (
-      <Wrapper>
+      <Wrapper name={this.props.name}>
           <Collection collection={this.state.collection} addToCart={this.addToCart} name={this.props.name}/>
           <ShoppingCart collection={this.state.collection} cart={this.state.cart}/>
           <Inventory addItem={this.addItem}/>
@@ -52,7 +52,7 @@ class Store extends React.Component {
 const Wrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
-  font-family: "Raleway", Helvetica, Arial, sans-serif;
+  font-family: ${props => style[props.name].copyFontFamily};
   text-align: center;
 `;
 

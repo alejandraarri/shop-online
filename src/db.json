@@ -60,9 +60,51 @@
    "shoppers":[
       {
          "id":1,
-         "name":"Striped Blouse With Buttoned Front",
-         "image":"/images/valentina08.jpg",
+         "name":"Lightweight Jacket",
+         "image":"/images/shoppers01.jpg",
          "price":6995,
+         "status":"available"
+      },
+      {
+         "id":2,
+         "name":"Classic Long Sleeved Shirt",
+         "image":"/images/shoppers02.jpg",
+         "price":4995,
+         "status":"available"
+      },
+      {
+         "id":3,
+         "name":"Knitted Pullover",
+         "image":"/images/shoppers03.jpg",
+         "price":4995,
+         "status":"available"
+      },
+      {
+         "id":4,
+         "name":"Statement T-Shirt",
+         "image":"/images/shoppers04.jpg",
+         "price":3995,
+         "status":"available"
+      },
+      {
+         "id":5,
+         "name":"White Leather Sneakers",
+         "image":"/images/shoppers05.jpg",
+         "price":9995,
+         "status":"available"
+      },
+      {
+         "id":6,
+         "name":"Classic Jacket",
+         "image":"/images/shoppers06.jpg",
+         "price":7995,
+         "status":"available"
+      },
+      {
+         "id":7,
+         "name":"Classic Wool Coat",
+         "image":"/images/shoppers07.jpg",
+         "price":19995,
          "status":"available"
       }
    ]
