@@ -1,5 +1,5 @@
 # Shop Online
-![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square)![Hackage-Deps](https://img.shields.io/hackage-deps/v/lens.svg?style=flat-square)
+![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square) ![Hackage-Deps](https://img.shields.io/hackage-deps/v/lens.svg?style=flat-square)
 
 Shop Online is a dual online shop built on React. This is an example of how we can have multiple stores, using Routing and Styled Components. In the landing page the user chooses which store wants to visit and is routed to the selected store. Depending on the store chosen, collection info is loaded from a JSON server. Also the style Components help to give definition to the store and differentiate from each other. In our case, we have the Valentina store oriented for female customers and the Shoppers store for male customers. Both stores have the same features:  
  - Inventary panel where you can add more Garments to the Store.
