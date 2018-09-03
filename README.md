@@ -13,13 +13,13 @@ $ npm run start
 ```
 
 ### Landing Page
-![Landing Page Screenshot](https://raw.githubusercontent.com/alejandraarri/shop-online/master/img/landing.png)
+![Landing Page Screenshot](https://raw.githubusercontent.com/alejandraarri/shop-online/master/img/landing.png?token=AIRH-G5opBLATNhGnTCPpRnczq2bh9iAks5blpJiwA%3D%3D)
 
 ### Valentina
-![Valentina Store Screenshot](https://raw.githubusercontent.com/alejandraarri/shop-online/master/img/valentina.png)
+![Valentina Store Screenshot](https://raw.githubusercontent.com/alejandraarri/shop-online/master/img/valentina.png?token=AIRH-GPb88lPYG4_-o7tRI-Bkt5_ir_Aks5blpLDwA%3D%3D)
 
 ### Shoppers
-![Shoppers Store Screenshot](https://raw.githubusercontent.com/alejandraarri/shop-online/master/img/shoppers.png)
+![Shoppers Store Screenshot](https://raw.githubusercontent.com/alejandraarri/shop-online/master/img/shoppers.png?token=AIRH-FnfLaJ_pNdVDOzGuNTYCFWIDrQ2ks5blpKvwA%3D%3D)
 
 ## Built with
 * [React] - A JavaScript library for building user interfaces
