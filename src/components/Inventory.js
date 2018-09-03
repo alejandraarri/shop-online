@@ -4,12 +4,22 @@ import styled from "styled-components";
 import AddItemForm from "./AddItemForm";
 
 class Inventory extends React.Component {
+  renderLicenseLinkCredit(){
+    return (
+      <LicenseLinkCredit>
+        Stock Photos by
+        <a href="https://icons8.com/" target="_blank">icons8</a>
+      </LicenseLinkCredit>
+    );
+  }
+
   render(){
     const { addItem } = this.props;
     return (
       <Fragment>
         <Checkbox type="checkbox" id="inventory-toggle" />
         <Wrapper>
+          {this.renderLicenseLinkCredit()}
           <Toogle htmlFor="inventory-toggle" />
           <Heading>Inventory</Heading>
           <AddItemForm addItem={addItem} />
@@ -41,6 +51,16 @@ const Wrapper = styled.div`
     max-height: 500px;
     transition: max-height 0.5s ease-out;
   }
+`;
+
+const LicenseLinkCredit = styled.div`
+position: absolute;
+top: -36px;
+right: 10px;
+background-color: #eee;
+padding: .5em;
+border-radius: 3px;
+font-size: .8em;
 `;
 
 const Toogle = styled.label`
