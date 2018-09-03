@@ -1,21 +1,27 @@
 import React, { Fragment } from "react";
-import AddItemForm from './AddItemForm';
+import PropTypes from "prop-types";
 import styled from "styled-components";
+import AddItemForm from "./AddItemForm";
 
 class Inventory extends React.Component {
   render(){
+    const { addItem } = this.props;
     return (
       <Fragment>
         <Checkbox type="checkbox" id="inventory-toggle" />
         <Wrapper>
-          <Toogle htmlFor="inventory-toggle"></Toogle>
+          <Toogle htmlFor="inventory-toggle" />
           <Heading>Inventory</Heading>
-          <AddItemForm addItem={this.props.addItem}/>
+          <AddItemForm addItem={addItem} />
         </Wrapper>
       </Fragment>
     );
   }
 }
+
+Inventory.propTypes = {
+  addItem: PropTypes.func.isRequired
+};
 
 const Checkbox = styled.input`
   display: none;

@@ -1,15 +1,17 @@
 import React, { Fragment } from "react";
-import ShoppingCartItem from './ShoppingCartItem';
-import { formatPrice } from "../utils";
+import PropTypes from "prop-types";
 import styled from "styled-components";
+import ShoppingCartItem from "./ShoppingCartItem";
+import { formatPrice } from "../utils";
 
 class ShoppingCart extends React.Component {
   renderCart(){
-    const cartIds = Object.keys(this.props.cart);
+    const { cart, collection } = this.props;
+    const cartIds = Object.keys(cart);
     const total = cartIds.reduce((prevTotal, key) => {
-      const garment = this.props.collection[key];
-      const count = this.props.cart[key];
-      const isAvailable = garment && garment.status === 'available';
+      const garment = collection[key];
+      const count = cart[key];
+      const isAvailable = garment && garment.status === "available";
       if(isAvailable) {
         return prevTotal + (count * garment.price)
       }
@@ -27,13 +29,13 @@ class ShoppingCart extends React.Component {
     return (
       <Fragment>
         <ul>
-          {Object.keys(this.props.cart).map(key => (
+          {Object.keys(cart).map(key => (
             <ShoppingCartItem
               key={key}
               index={key}
-              collection={this.props.collection}
-              cart={this.props.cart}
-              details={this.props.collection[key]}
+              collection={collection}
+              cart={cart}
+              details={collection[key]}
             />
           ))}
         </ul>
@@ -53,6 +55,11 @@ class ShoppingCart extends React.Component {
     );
   }
 }
+
+ShoppingCart.propTypes = {
+  collection: PropTypes.array.isRequired,
+  cart: PropTypes.object.isRequired,
+};
 
 const Wrapper = styled.div`
   width: 45%;

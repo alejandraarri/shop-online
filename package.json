@@ -5,12 +5,20 @@
     "autoprefixer": "^9.0.1",
     "concat": "^1.0.3",
     "concurrently": "^3.6.1",
+    "eslint": "^5.5.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-prettier": "^2.6.2",
+    "eslint-plugin-react": "^7.11.1",
     "node-sass": "^4.9.2",
     "postcss-cli": "^6.0.0",
-    "react-scripts": "^1.1.4"
+    "prettier": "1.14.2",
+    "react-scripts": "^1.1.5"
   },
   "dependencies": {
     "json-server": "^0.14.0",
+    "prop-types": "^15.6.2",
     "react": "^16.3.0-alpha.1",
     "react-dom": "^16.3.0-alpha.1",
     "react-router-dom": "^4.2.2",
@@ -22,6 +30,7 @@
     "compile:sass": "node-sass src/sass/main.scss src/style.css",
     "watch:sass": "node-sass src/sass/main.scss src/style.css -w -r",
     "startw": "concurrently \"npm run start\" \"npm run watch:sass\"",
-    "json-server": "node ./node_modules/json-server/bin/index.js --watch src/db.json -p 3002"
+    "json-server": "node ./node_modules/json-server/bin/index.js --watch src/db.json -p 3002",
+    "lint": "eslint src/**/*.js src/**/*.jsx"
   }
 }

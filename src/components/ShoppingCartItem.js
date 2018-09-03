@@ -1,26 +1,32 @@
 import React from "react";
-import { formatPrice } from "../utils";
+import PropTypes from "prop-types";
 import styled from "styled-components";
+import { formatPrice } from "../utils";
 
 class ShoppingCartItem extends React.Component {
   renderPrice(){
-    const garment = this.props.collection[this.props.index];
-    const count = this.props.cart[this.props.index];
-    const isAvailable = garment.status === 'available';
+    const { collection, index, cart } = this.props;
+    const garment = collection[index];
+    const count = cart[index];
+    const isAvailable = garment.status === "available";
     if(!isAvailable) {
       return <div>Sold out</div>;
     }
     return (
       <div>
-        <span>{count}{count === 1 ? " unit" : " units"}</span>
+        <span>
+          {count}
+          {count === 1 ? " unit" : " units"}
+        </span>
         <Price>{formatPrice(count * garment.price)}</Price>
       </div>
     );
   }
   render(){
-    const garment = this.props.collection[this.props.index];
+    const { collection, index} = this.props;
+    const garment = collection[index];
     return (
-     <Item>
+      <Item>
         <ImgWrapper>
           <img src={garment.image} alt={garment.name} />
         </ImgWrapper>
@@ -32,6 +38,12 @@ class ShoppingCartItem extends React.Component {
     );
   }
 }
+
+ShoppingCartItem.propTypes = {
+  collection: PropTypes.array.isRequired,
+  index: PropTypes.number.isRequired,
+  cart: PropTypes.object.isRequired
+};
 
 const Item = styled.li`
   display: flex;

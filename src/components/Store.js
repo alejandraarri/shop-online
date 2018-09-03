@@ -13,8 +13,9 @@ class Store extends React.Component {
   };
 
   addItem = garment => {
-    const collection = { ...this.state.collection };
-    collection[`garment${Date.now()}`] = garment;
+    const collection = this.state.collection.slice();
+    const lastIndex = collection.slice(-1)[0].id + 1;
+    collection.push({ id: lastIndex, ...garment });
     this.setState({ collection });
   };
 

@@ -1,20 +1,26 @@
 import React from "react";
-import { formatPrice } from "../utils";
+import PropTypes from "prop-types";
 import styled from "styled-components";
+import { formatPrice } from "../utils";
 import style from "../style";
 
 class Garment extends React.Component {
   render(){
-    const { image, name, status, price } = this.props.details;
-    const isAvailable = status === 'available';
+    const { details, index, addToCart, name: storeName } = this.props;
+    const { image, name, status, price } = details;
+    const isAvailable = status === "available";
     const filterVal = isAvailable ? 1 : 0.5;
 
     return (
-      <GarmentItem name={this.props.name} opacity={filterVal}>
+      <GarmentItem name={name} opacity={filterVal}>
         <ImgWrapper>
           <img src={image} alt={name} />
-          <Button name={this.props.name} disabled={!isAvailable}
-            onClick={() => this.props.addToCart(this.props.index)}>Add To Cart</Button>
+          <Button
+            name={storeName}
+            disabled={!isAvailable}
+            onClick={() => addToCart(index)}>
+            Add To Cart
+          </Button>
         </ImgWrapper>
         <Heading>{name}</Heading>
         <p>{formatPrice(price)}</p>
@@ -23,15 +29,25 @@ class Garment extends React.Component {
   }
 }
 
+Garment.propTypes = {
+  details: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+    status: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired
+  }).isRequired,
+  index: PropTypes.number.isRequired,
+  name: PropTypes.string.isRequired,
+  addToCart: PropTypes.func.isRequired
+};
+
 const GarmentItem = styled.li`
   width: 50%;
   padding: 1em;
   filter: opacity(${props => props.opacity});
   img {
     width: 100%;
-    padding-bottom: ${props => {
-      return props.name === "shoppers" ? "25px" : "0";
-    }};
+    padding-bottom: ${props => props.name === "shoppers" ? "25px" : "0"};
   }
 `;
 
@@ -40,9 +56,7 @@ const ImgWrapper = styled.div`
 `;
 
 const Button = styled.button`
-  display: ${props => {
-    return props.name === "valentina" ? "none" : "block";
-    }};
+  display: ${props => props.name === "valentina" ? "none" : "block"};
   position: absolute;
   bottom: 0;
   left: 0;
@@ -53,21 +67,17 @@ const Button = styled.button`
   border-color: ${props => style[props.name].primaryBtnBorder};
   color: ${props => style[props.name].primaryBtnColor};
   font-size: ${props => style[props.name].primaryBtnFontSize};
-  text-transform: ${props => {
-    return props.name === "shoppers" ? "uppercase" : "none";
-    }};
+  text-transform: ${props => props.name === "shoppers" ? "uppercase" : "none"};
   -webkit-appearance: none;
 
   &:hover {
     background: ${props => style[props.name].primaryBtnBgHover};
     border-color: ${props => style[props.name].primaryBtnBorderHover};
-    border-width: ${props => {
-      return style[props.name].primaryBtnBorderWidthHover ? style[props.name].primaryBtnBorderWidthHover : '1px';
-    }};
+    border-width: ${props => style[props.name].primaryBtnBorderWidthHover ? style[props.name].primaryBtnBorderWidthHover : "1px"};
     color: ${props => style[props.name].primaryBtnColorHover};
   }
   ${GarmentItem}:hover & {
-    display: ${props => props.disabled ? 'none' : 'block'};
+    display: ${props => props.disabled ? "none" : "block"};
   }
 `;
 
