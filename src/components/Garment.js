@@ -42,12 +42,18 @@ Garment.propTypes = {
 };
 
 const GarmentItem = styled.li`
-  width: 50%;
+  width: 100%;
   padding: 1em;
   filter: opacity(${props => props.opacity});
   img {
     width: 100%;
     padding-bottom: ${props => props.name === "shoppers" ? "25px" : "0"};
+  }
+  @media screen and (min-width: 425px) {
+    width: 50%;
+  }
+  @media screen and (min-width: 768px) {
+    width: 33%;
   }
 `;
 

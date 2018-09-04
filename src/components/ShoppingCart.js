@@ -48,10 +48,14 @@ class ShoppingCart extends React.Component {
   }
   render(){
     return (
-      <Wrapper>
-        <Heading>My Cart</Heading>
-        {this.renderCart()}
-      </Wrapper>
+      <Fragment>
+        <Checkbox type="checkbox" id="cart-toggle" />
+        <Wrapper>
+          <Toogle htmlFor="cart-toggle" />
+          <Heading>My Cart</Heading>
+          {this.renderCart()}
+        </Wrapper>
+      </Fragment>
     );
   }
 }
@@ -61,13 +65,46 @@ ShoppingCart.propTypes = {
   cart: PropTypes.object.isRequired,
 };
 
+const Checkbox = styled.input`
+  display: none;
+`;
+
+const Toogle = styled.label`
+  position: absolute;
+  top: 0;
+  left: -40px;
+  background-color: #fff;
+  background-image: url('images/shopping-cart.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 18px;
+  border: 1px solid #eee;
+  padding: .8em;
+  font-size: 1.5em;
+  color: #777;
+  cursor: pointer;
+`;
+
 const Wrapper = styled.div`
-  width: 45%;
-  max-height: 90vh;
-  margin-left: 5%;
+  position: fixed;
+  right: -85%;
+  width: 85%;
+  height: 100vh;
+  background-color: #ffffff;
   padding: 1.5em 2em;
   border-left: 1px solid #eee;
-  overflow: scroll;
+  overflow: visible;
+  transition: right 0.5s ease-out;
+
+  @media screen and (min-width: 768px) {
+    right: -45%;
+    width: 45%;
+  }
+
+  ${Checkbox}:checked + & {
+    right: 0px;
+    transition: right 0.5s ease-out;
+  }
 `;
 
 const Heading = styled.h2`

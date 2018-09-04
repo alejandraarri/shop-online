@@ -38,7 +38,6 @@ Collection.propTypes = {
 };
 
 const Wrapper = styled.div`
-  width: 50%;
   max-height: 90vh;
   overflow: scroll;
 `;

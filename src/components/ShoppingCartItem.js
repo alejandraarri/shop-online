@@ -65,6 +65,7 @@ const Details = styled.div`
   justify-content: space-between;
   flex-grow: 1;
   position: relative;
+  max-width: 80%;
   padding-left: 1em;
   text-align: left;
 `;
