@@ -3,8 +3,30 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import ShoppingCartItem from "./ShoppingCartItem";
 import { formatPrice } from "../utils";
+import style from "../style";
 
 class ShoppingCart extends React.Component {
+  showBadge(){
+    const { cart, collection, name: storeName } = this.props;
+    const cartIds = Object.keys(cart);
+    const itemsCount = cartIds.reduce((prevTotal, key) => {
+      const garment = collection[key];
+      const count = cart[key];
+      const isAvailable = garment && garment.status === "available";
+      if(isAvailable) {
+        return prevTotal + count;
+      }
+      return prevTotal;
+    }, 0);
+    if (itemsCount > 0) {
+      return(
+        <Badge
+          name={storeName}>
+          {itemsCount}
+        </Badge>
+      );
+    }
+  }
   renderCart(){
     const { cart, collection } = this.props;
     const cartIds = Object.keys(cart);
@@ -22,7 +44,6 @@ class ShoppingCart extends React.Component {
         <EmptyCart>
           <p>Your Shopping Cart is empty.</p>
           <p>Let's start shopping!</p>
-
         </EmptyCart>
       );
     }
@@ -51,7 +72,9 @@ class ShoppingCart extends React.Component {
       <Fragment>
         <Checkbox type="checkbox" id="cart-toggle" />
         <Wrapper>
-          <Toogle htmlFor="cart-toggle" />
+          <Toogle htmlFor="cart-toggle">
+            {this.showBadge()}
+          </Toogle>
           <Heading>My Cart</Heading>
           {this.renderCart()}
         </Wrapper>
@@ -63,6 +86,7 @@ class ShoppingCart extends React.Component {
 ShoppingCart.propTypes = {
   collection: PropTypes.array.isRequired,
   cart: PropTypes.object.isRequired,
+  name: PropTypes.string.isRequired
 };
 
 const Checkbox = styled.input`
@@ -77,12 +101,24 @@ const Toogle = styled.label`
   background-image: url('images/shopping-cart.svg');
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 18px;
+  background-size: 20px;
   border: 1px solid #eee;
   padding: .8em;
   font-size: 1.5em;
   color: #777;
   cursor: pointer;
+`;
+
+const Badge = styled.span`
+  position: absolute;
+  top: .1rem;
+  right: .1rem;
+  width: 1rem;
+  height: 1rem;
+  background: ${props => style[props.name].primaryBtnBg};
+  border-radius: 50%;
+  font-size: .5em;
+  color: #fff;
 `;
 
 const Wrapper = styled.div`

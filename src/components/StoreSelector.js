@@ -75,6 +75,7 @@ const Label = styled.label`
 const Select = styled.select`
   display: block;
   width: 100%;
+  background-color: #f8f8f8;
   border-radius: 0;
   margin: 5px 0;
   padding: .5em;

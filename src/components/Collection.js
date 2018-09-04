@@ -7,7 +7,6 @@ import style from "../style"
 class Collection extends React.Component {
   render(){
     const { name, collection, addToCart } = this.props;
-    console.log("props", this.props);
     return (
       <Wrapper>
         <Heading name={name}>{name}</Heading>

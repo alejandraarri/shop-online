@@ -41,7 +41,7 @@ class ShoppingCartItem extends React.Component {
 
 ShoppingCartItem.propTypes = {
   collection: PropTypes.array.isRequired,
-  index: PropTypes.number.isRequired,
+  index: PropTypes.string.isRequired,
   cart: PropTypes.object.isRequired
 };
 

@@ -32,7 +32,7 @@ class Store extends React.Component {
         return response.json();
       })
       .then(function(myJson) {
-        console.log(myJson);
+        console.log("Collection successfully loaded");
         that.setState({ collection:myJson, hasData:true });
       });
   };
@@ -44,7 +44,7 @@ class Store extends React.Component {
     return (
       <Wrapper name={this.props.name}>
           <Collection collection={this.state.collection} addToCart={this.addToCart} name={this.props.name}/>
-          <ShoppingCart collection={this.state.collection} cart={this.state.cart}/>
+          <ShoppingCart collection={this.state.collection} cart={this.state.cart} name={this.props.name}/>
           <Inventory addItem={this.addItem}/>
       </Wrapper>
     );
