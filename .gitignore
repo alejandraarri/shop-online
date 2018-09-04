@@ -1,6 +1,9 @@
 # Sass generated files
 src/*.css
 
+# React build directory
+build/
+
 # Logs
 logs
 *.log
@@ -62,3 +65,5 @@ typings/
 
 # next.js build output
 .next
+
+screenshots/

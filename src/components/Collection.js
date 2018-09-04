@@ -39,6 +39,7 @@ Collection.propTypes = {
 const Wrapper = styled.div`
   max-height: 90vh;
   overflow: scroll;
+  -webkit-overflow-scrolling: touch;
 `;
 
 const Heading = styled.h1`

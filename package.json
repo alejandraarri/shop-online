@@ -27,6 +27,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "build": "react-scripts build",
     "compile:sass": "node-sass src/sass/main.scss src/style.css",
     "watch:sass": "node-sass src/sass/main.scss src/style.css -w -r",
     "json-server": "node ./node_modules/json-server/bin/index.js --watch src/db.json -p 3001 -H 0.0.0.0",
