@@ -1,21 +1,5 @@
-//== Variables
-//
-@import "base/vars";
-
-//== Vendor packages
-//
-
-
-//== Helpers: mixins and functions
-//
-
 
 //== Base and layout
 //
 @import "base/normalize";
-@import "base/type";
 @import "base/layout";
-
-//== Components
-//
-@import "components/storeSelector";

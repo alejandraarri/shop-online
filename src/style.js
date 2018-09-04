@@ -1,4 +1,21 @@
 const style = {
+  fonts: {
+    copyFontFamily: "'Raleway', Helvetica, Arial, sans-serif",
+  },
+  colors: {
+    primaryLight: "#D84C59",
+    primary: "#CC243D",
+    neutralXlight: "#FFFFFF",
+    neutralLight: "#F3F3F3",
+    neutral: "#E4E3DB",
+    neutralDark: "#A09F95",
+    neutralXdark: "#5C5A4E",
+    grayXlight: "#FFFFFF",
+    grayLight: "#EEEEEE",
+    gray: "#90908D",
+    grayMiddark: "#737166",
+    grayDark: "#666666"
+  },
   valentina: {
     copyFontFamily: "'Raleway', Helvetica, Arial, sans-serif",
     mainHeadingFontFamily: "'Libre Baskerville', Times, serif",

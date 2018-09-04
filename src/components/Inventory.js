@@ -8,7 +8,7 @@ class Inventory extends React.Component {
     return (
       <LicenseLinkCredit>
         Stock Photos by
-        <a href="https://icons8.com/" target="_blank">icons8</a>
+        <a href="https://icons8.com/" target="_blank" rel="noreferrer noopener">icons8</a>
       </LicenseLinkCredit>
     );
   }
@@ -54,13 +54,13 @@ const Wrapper = styled.div`
 `;
 
 const LicenseLinkCredit = styled.div`
-position: absolute;
-top: -36px;
-right: 10px;
-background-color: #eee;
-padding: .5em;
-border-radius: 3px;
-font-size: .8em;
+  position: absolute;
+  top: -36px;
+  right: 10px;
+  background-color: #eee;
+  padding: .5em;
+  border-radius: 3px;
+  font-size: .8em;
 `;
 
 const Toogle = styled.label`
