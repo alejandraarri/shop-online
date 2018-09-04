@@ -29,8 +29,8 @@
     "start": "react-scripts start",
     "compile:sass": "node-sass src/sass/main.scss src/style.css",
     "watch:sass": "node-sass src/sass/main.scss src/style.css -w -r",
-    "startw": "concurrently \"npm run start\" \"npm run watch:sass\"",
-    "json-server": "node ./node_modules/json-server/bin/index.js --watch src/db.json -p 3002",
-    "lint": "eslint src/**/*.js src/**/*.jsx"
+    "json-server": "node ./node_modules/json-server/bin/index.js --watch src/db.json -p 3001 -H 0.0.0.0",
+    "lint": "eslint src/**/*.js src/**/*.jsx",
+    "shop-online": "concurrently \"npm run start\" \"npm run json-server\""
   }
 }

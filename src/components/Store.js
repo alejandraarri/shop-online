@@ -26,7 +26,8 @@ class Store extends React.Component {
   };
   componentWillMount(){
     var that = this;
-    fetch("http://localhost:3002/"+ that.props.name)
+    const collectionUrl = "http://"+ window.location.hostname +":3001/"+ that.props.name
+    fetch(collectionUrl)
       .then(function(response) {
         return response.json();
       })

@@ -3,13 +3,12 @@
 
 Shop Online is a dual online shop built on React. This is an example of how we can have multiple stores, using Routing and Styled Components. In the landing page the user chooses which store wants to visit and is routed to the selected store. Depending on the store chosen, collection info is loaded from a JSON server. Also the style Components help to give definition to the store and differentiate from each other. In our case, we have the Valentina store oriented for female customers and the Shoppers store for male customers. Both stores have the same features:  
  - Inventary panel where you can add more Garments to the Store.
- - Actual Collection display
+ - Current Collection display.
  - Fully working shopping cart.
 
 ## Usage
 ```bash
-$ npm run json-server
-$ npm run start
+$ npm run shop-online
 ```
 
 ### Landing Page
