@@ -1,7 +1,7 @@
 # Shop Online - Multiple store example site built on React
 ![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square) ![Hackage-Deps](https://img.shields.io/hackage-deps/v/lens.svg?style=flat-square)
 
-Shop Online is multiple store example site built on React. This simple eCommerce is an example of how we can have multiple stores, very useful for a fashion firm that has several brands. In the landing page the customer chooses which store wants to visit and is routed to the selected store. Depending on the store chosen, collection info is loaded from a JSON server. Also the Style Components help to give definition to the store and differentiate from each other. In our case, for demonstration purposes, we have the Valentina store targeting a female audience and the Shoppers store focused on male customers. Both stores have the same features:  
+Shop Online is a multiple store example site built on React. This simple eCommerce is an example of how we can have multiple stores, very useful for a fashion firm that has several brands. In the landing page the customer chooses which store wants to visit and is routed to the selected store. Depending on the store chosen, collection info is loaded from a JSON server. Also the Style Components help to give definition to the store and differentiate from each other. In our case, for demonstration purposes, we have the Valentina store targeting a female audience and the Shoppers store focused on male customers. Both stores have the same features:  
  - Inventary panel: you can add more Garments to the Store.
  - Current Collection display: you can add to cart selected products.
  - Shopping cart: See the products in your cart and the total invoice amount.
