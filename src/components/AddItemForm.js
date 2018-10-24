@@ -7,16 +7,22 @@ class AddItemForm extends React.Component {
   statusRef = React.createRef();
   imageRef = React.createRef();
 
+  validateItem(){
+    return this.nameRef.current.value && this.priceRef.current.value && this.imageRef.current.value;
+  }
+
   createItem = (event) => {
     event.preventDefault();
-    const garment = {
-      name: this.nameRef.current.value,
-      price: parseFloat(this.priceRef.current.value),
-      status: this.statusRef.current.value,
-      image: this.imageRef.current.value
+    if(this.validateItem()){
+      const garment = {
+        name: this.nameRef.current.value,
+        price: parseFloat(this.priceRef.current.value),
+        status: this.statusRef.current.value,
+        image: this.imageRef.current.value
+      }
+      this.props.addItem(garment);
+      event.currentTarget.reset();
     }
-    this.props.addItem(garment);
-    event.currentTarget.reset();
   };
 
   render(){
