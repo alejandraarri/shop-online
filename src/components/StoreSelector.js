@@ -20,10 +20,9 @@ class StoreSelector extends React.Component {
           <Form onSubmit={this.goToStore}>
             <Label>Select the Store</Label>
             <Select innerRef={this.mySelect} required>
-              <option value=""></option>
+              <option value="">Select...</option>
               <option value="shoppers">Shoppers</option>
               <option value="valentina">Valentina</option>
-              <option value="mnml">MNML</option>
             </Select>
             <Button type="Submit">Continue</Button>
           </Form>
@@ -88,6 +87,7 @@ const Button = styled.button`
   width: 100%;
   background-color: ${style["colors"].neutralDark};
   border-color: ${style["colors"].neutralDark};
+  border-style: unset;
   padding: .5em;
   margin: 5px 0;
   color: ${style["colors"].neutralLight};

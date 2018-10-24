@@ -71,6 +71,7 @@ const Button = styled.button`
   padding: .5em;
   background: ${props => style[props.name].primaryBtnBg};
   border-color: ${props => style[props.name].primaryBtnBorder};
+  border-style: unset;
   color: ${props => style[props.name].primaryBtnColor};
   font-size: ${props => style[props.name].primaryBtnFontSize};
   text-transform: ${props => props.name === "shoppers" ? "uppercase" : "none"};

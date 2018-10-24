@@ -24,9 +24,22 @@ class Store extends React.Component {
     cart[key] = cart[key] + 1 || 1;
     this.setState({ cart });
   };
+
+  saveShopName = name => {
+    const savedName = localStorage.getItem("shoponline.name");
+    if(!savedName || savedName !== name) {
+      localStorage.setItem("shoponline.name", name);
+    }
+  };
+
+  getShopName(){
+    return localStorage.getItem("shoponline.name");
+  };
+
   componentWillMount(){
     var that = this;
-    const collectionUrl = "http://"+ window.location.hostname +":3001/"+ that.props.name
+    that.saveShopName(that.props.name);
+    const collectionUrl = "http://"+ window.location.hostname +":3001/"+ that.getShopName();
     fetch(collectionUrl)
       .then(function(response) {
         return response.json();
