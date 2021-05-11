@@ -73,8 +73,8 @@ const Toogle = styled.label`
   cursor: pointer;
   transform:rotate(-90deg);
 
-  &::before {
-    content: '\00bb';
+  &:before {
+    content: "»";
   }
 
   ${Checkbox}:checked + ${Wrapper} & {
