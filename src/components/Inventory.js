@@ -4,7 +4,7 @@ import styled from "styled-components";
 import AddItemForm from "./AddItemForm";
 
 class Inventory extends React.Component {
-  renderLicenseLinkCredit(){
+  renderLicenseLinkCredit() {
     return (
       <LicenseLinkCredit>
         Stock Photos by
@@ -13,10 +13,10 @@ class Inventory extends React.Component {
     );
   }
 
-  render(){
+  render() {
     const { addItem } = this.props;
     return (
-      <Fragment>
+      <>
         <Checkbox type="checkbox" id="inventory-toggle" />
         <Wrapper>
           {this.renderLicenseLinkCredit()}
@@ -24,7 +24,7 @@ class Inventory extends React.Component {
           <Heading>Inventory</Heading>
           <AddItemForm addItem={addItem} />
         </Wrapper>
-      </Fragment>
+      </>
     );
   }
 }

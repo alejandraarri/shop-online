@@ -42,6 +42,6 @@ const style = {
     primaryBtnColorHover: "#ff690f",
     primaryBtnFontSize: ".8em"
   }
-}
+};
 
 export default style;
