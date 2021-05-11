@@ -4,12 +4,12 @@ import styled from "styled-components";
 import { formatPrice } from "../utils";
 
 class ShoppingCartItem extends React.Component {
-  renderPrice(){
+  renderPrice() {
     const { collection, index, cart } = this.props;
     const garment = collection[index];
     const count = cart[index];
     const isAvailable = garment.status === "available";
-    if(!isAvailable) {
+    if (!isAvailable) {
       return <div>Sold out</div>;
     }
     return (
@@ -22,8 +22,9 @@ class ShoppingCartItem extends React.Component {
       </div>
     );
   }
-  render(){
-    const { collection, index} = this.props;
+
+  render() {
+    const { collection, index } = this.props;
     const garment = collection[index];
     return (
       <Item>

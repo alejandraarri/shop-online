@@ -5,9 +5,13 @@ import { formatPrice } from "../utils";
 import style from "../style";
 
 class Garment extends React.Component {
-  render(){
-    const { details, index, addToCart, name: storeName } = this.props;
-    const { image, name, status, price } = details;
+  render() {
+    const {
+      details, index, addToCart, name: storeName
+    } = this.props;
+    const {
+      image, name, status, price
+    } = details;
     const isAvailable = status === "available";
     const filterVal = isAvailable ? 1 : 0.5;
 
@@ -44,10 +48,10 @@ Garment.propTypes = {
 const GarmentItem = styled.li`
   width: 100%;
   padding: 1em;
-  filter: opacity(${props => props.opacity});
+  filter: opacity(${(props) => props.opacity});
   img {
     width: 100%;
-    padding-bottom: ${props => props.name === "shoppers" ? "25px" : "0"};
+    padding-bottom: ${(props) => (props.name === "shoppers" ? "25px" : "0")};
   }
   @media screen and (min-width: 425px) {
     width: 50%;
@@ -62,29 +66,29 @@ const ImgWrapper = styled.div`
 `;
 
 const Button = styled.button`
-  display: ${props => props.name === "valentina" ? "none" : "block"};
+  display: ${(props) => (props.name === "valentina" ? "none" : "block")};
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
   width: 100%;
   padding: .5em;
-  background: ${props => style[props.name].primaryBtnBg};
-  border-color: ${props => style[props.name].primaryBtnBorder};
+  background: ${(props) => style[props.name].primaryBtnBg};
+  border-color: ${(props) => style[props.name].primaryBtnBorder};
   border-style: unset;
-  color: ${props => style[props.name].primaryBtnColor};
-  font-size: ${props => style[props.name].primaryBtnFontSize};
-  text-transform: ${props => props.name === "shoppers" ? "uppercase" : "none"};
+  color: ${(props) => style[props.name].primaryBtnColor};
+  font-size: ${(props) => style[props.name].primaryBtnFontSize};
+  text-transform: ${(props) => (props.name === "shoppers" ? "uppercase" : "none")};
   -webkit-appearance: none;
 
   &:hover {
-    background: ${props => style[props.name].primaryBtnBgHover};
-    border-color: ${props => style[props.name].primaryBtnBorderHover};
-    border-width: ${props => style[props.name].primaryBtnBorderWidthHover ? style[props.name].primaryBtnBorderWidthHover : "1px"};
-    color: ${props => style[props.name].primaryBtnColorHover};
+    background: ${(props) => style[props.name].primaryBtnBgHover};
+    border-color: ${(props) => style[props.name].primaryBtnBorderHover};
+    border-width: ${(props) => (style[props.name].primaryBtnBorderWidthHover ? style[props.name].primaryBtnBorderWidthHover : "1px")};
+    color: ${(props) => style[props.name].primaryBtnColorHover};
   }
   ${GarmentItem}:hover & {
-    display: ${props => props.disabled ? "none" : "block"};
+    display: ${(props) => (props.disabled ? "none" : "block")};
   }
 `;
 

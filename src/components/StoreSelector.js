@@ -1,9 +1,8 @@
-import React from 'react';
+import React from "react";
 import styled from "styled-components";
-import style from "../style"
+import style from "../style";
 
 class StoreSelector extends React.Component {
-
   mySelect = React.createRef();
 
   goToStore = (event) => {
@@ -27,23 +26,26 @@ class StoreSelector extends React.Component {
             <Button type="Submit">Continue</Button>
           </Form>
           <LicenseLinkCredit>
-            <span>Photo by <a href="https://unsplash.com/photos/YGzEX5yLKeA" target="_blank" rel="noreferrer noopener">Chris Murray</a></span>
+            <span>
+              Photo by
+              <a href="https://unsplash.com/photos/YGzEX5yLKeA" target="_blank" rel="noreferrer noopener">Chris Murray</a>
+            </span>
           </LicenseLinkCredit>
         </Overlay>
       </Wrapper>
-    )
+    );
   }
 }
 
 const Wrapper = styled.div`
   height: 100vh;
   background-image: url('images/landing.jpg');
-  background-color: ${style["colors"].neutralDark};
+  background-color: ${style.colors.neutralDark};
   background-size: cover;
   background-blend-mode: luminosity;
-  font-family: ${style["fonts"].copyFontFamily};
+  font-family: ${style.fonts.copyFontFamily};
   text-align: center;
-  color: ${style["colors"].neutralXlight};
+  color: ${style.colors.neutralXlight};
 `;
 
 const Overlay = styled.div`
@@ -78,19 +80,19 @@ const Select = styled.select`
   border-radius: 0;
   margin: 5px 0;
   padding: .5em;
-  color: ${style["colors"].neutralXdark};
+  color: ${style.colors.neutralXdark};
   -webkit-appearance: none;
 `;
 
 const Button = styled.button`
   display: block;
   width: 100%;
-  background-color: ${style["colors"].neutralDark};
-  border-color: ${style["colors"].neutralDark};
+  background-color: ${style.colors.neutralDark};
+  border-color: ${style.colors.neutralDark};
   border-style: unset;
   padding: .5em;
   margin: 5px 0;
-  color: ${style["colors"].neutralLight};
+  color: ${style.colors.neutralLight};
   text-transform: uppercase;
   letter-spacing: .2px;
 `;
@@ -102,10 +104,8 @@ const LicenseLinkCredit = styled.div`
   border-radius: 3px;
   font-size: .8em;
   a {
-    color: ${style["colors"].neutralXlight};
+    color: ${style.colors.neutralXlight};
   }
 `;
-
-
 
 export default StoreSelector;

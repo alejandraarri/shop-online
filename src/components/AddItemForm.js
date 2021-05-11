@@ -3,40 +3,43 @@ import styled from "styled-components";
 
 class AddItemForm extends React.Component {
   nameRef = React.createRef();
+
   priceRef = React.createRef();
+
   statusRef = React.createRef();
+
   imageRef = React.createRef();
 
-  validateItem(){
+  validateItem() {
     return this.nameRef.current.value && this.priceRef.current.value && this.imageRef.current.value;
   }
 
   createItem = (event) => {
     event.preventDefault();
-    if(this.validateItem()){
+    if (this.validateItem()) {
       const garment = {
         name: this.nameRef.current.value,
         price: parseFloat(this.priceRef.current.value),
         status: this.statusRef.current.value,
         image: this.imageRef.current.value
-      }
+      };
       this.props.addItem(garment);
       event.currentTarget.reset();
     }
   };
 
-  render(){
+  render() {
     return (
-        <Form className="item__edit-form" onSubmit={this.createItem}>
-          <input name="name" ref={this.nameRef} type="text" placeholder="Name" />
-          <input name="price" ref={this.priceRef} type="text" placeholder="Price" />
-          <select name="status" ref={this.statusRef}>
-            <option value="available">In Stock</option>
-            <option value="unavailable">Sold Out</option>
-          </select>
-          <input name="image" ref={this.imageRef} type="text" placeholder="Image" />
-          <button type="submit">Add Garment</button>
-        </Form>
+      <Form className="item__edit-form" onSubmit={this.createItem}>
+        <input name="name" ref={this.nameRef} type="text" placeholder="Name" />
+        <input name="price" ref={this.priceRef} type="text" placeholder="Price" />
+        <select name="status" ref={this.statusRef}>
+          <option value="available">In Stock</option>
+          <option value="unavailable">Sold Out</option>
+        </select>
+        <input name="image" ref={this.imageRef} type="text" placeholder="Image" />
+        <button type="submit">Add Garment</button>
+      </Form>
     );
   }
 }

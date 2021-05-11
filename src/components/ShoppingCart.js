@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import ShoppingCartItem from "./ShoppingCartItem";
@@ -6,20 +6,20 @@ import { formatPrice } from "../utils";
 import style from "../style";
 
 class ShoppingCart extends React.Component {
-  showBadge(){
+  showBadge() {
     const { cart, collection, name: storeName } = this.props;
     const cartIds = Object.keys(cart);
     const itemsCount = cartIds.reduce((prevTotal, key) => {
       const garment = collection[key];
       const count = cart[key];
       const isAvailable = garment && garment.status === "available";
-      if(isAvailable) {
+      if (isAvailable) {
         return prevTotal + count;
       }
       return prevTotal;
     }, 0);
     if (itemsCount > 0) {
-      return(
+      return (
         <Badge
           name={storeName}>
           {itemsCount}
@@ -27,15 +27,16 @@ class ShoppingCart extends React.Component {
       );
     }
   }
-  renderCart(){
+
+  renderCart() {
     const { cart, collection } = this.props;
     const cartIds = Object.keys(cart);
     const total = cartIds.reduce((prevTotal, key) => {
       const garment = collection[key];
       const count = cart[key];
       const isAvailable = garment && garment.status === "available";
-      if(isAvailable) {
-        return prevTotal + (count * garment.price)
+      if (isAvailable) {
+        return prevTotal + (count * garment.price);
       }
       return prevTotal;
     }, 0);
@@ -48,9 +49,9 @@ class ShoppingCart extends React.Component {
       );
     }
     return (
-      <Fragment>
+      <>
         <ul>
-          {Object.keys(cart).map(key => (
+          {Object.keys(cart).map((key) => (
             <ShoppingCartItem
               key={key}
               index={key}
@@ -64,12 +65,13 @@ class ShoppingCart extends React.Component {
           <span>Total: </span>
           <span>{formatPrice(total)}</span>
         </Total>
-      </Fragment>
+      </>
     );
   }
-  render(){
+
+  render() {
     return (
-      <Fragment>
+      <>
         <Checkbox type="checkbox" id="cart-toggle" />
         <Wrapper>
           <Toogle htmlFor="cart-toggle">
@@ -78,7 +80,7 @@ class ShoppingCart extends React.Component {
           <Heading>My Cart</Heading>
           {this.renderCart()}
         </Wrapper>
-      </Fragment>
+      </>
     );
   }
 }
@@ -115,7 +117,7 @@ const Badge = styled.span`
   right: .1rem;
   width: 1rem;
   height: 1rem;
-  background: ${props => style[props.name].primaryBtnBg};
+  background: ${(props) => style[props.name].primaryBtnBg};
   border-radius: 50%;
   font-size: .5em;
   color: #fff;
